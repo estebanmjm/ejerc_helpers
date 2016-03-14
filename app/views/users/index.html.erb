@@ -1,0 +1,65 @@
+<h1>Ejercio clase sobre helpers</h1>
+ 
+ <%= form_tag({controller: "users", action: "contact"}, method: "put", class: "nifty_form") do %>
+
+ <div class="form-group">
+    <%= label_tag :name, 'Nombre' %>
+    <%= text_field(:name, class: 'form-control') %>
+ </div>
+
+ <div class="form-group">
+    <%= label_tag :lastname, 'Apellido' %>
+    <%= text_field(:lastname, class: 'form-control') %>
+ </div>
+
+  <div class="form-group">
+    <%= label_tag :email, 'Email' %>
+    <%= text_field_tag :email, "", placeholder: 'digite aqui su correo electronico', class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag  :born_on, 'Fecha de nacimiento'  %>
+    <%= date_field(:born_on, "") %>
+  </div>
+
+  
+
+
+  <div class="form-group">
+            
+            <%= label_tag :programs, 'Lenguages de programacion preferidos' %>
+            <br>
+            
+            <%= label_tag :ruby %>
+            <%= check_box_tag :ruby %>
+
+            <%= label_tag :python %>
+            <%= check_box_tag :python %>
+
+            <%= label_tag :scala %>
+            <%= check_box_tag :scala %>
+
+            <%= label_tag :javascript %>
+            <%= check_box_tag :javascript %>
+
+            <%= label_tag :java %>
+            <%= check_box_tag :java %>
+
+          </div>
+
+<div class="form-group">
+    <%= label_tag :experience %>
+    <%= text_area_tag(:experience, "", class: 'form-control') %>
+</div>
+
+<div class="form-group">
+    <%= label_tag :exp_years, 'Años de experiencia' %>
+    <%= select_tag :exp_years, options_for_select(["6 meses a 1 año", "1 a 2 años","2 a 5 años"]), class: "form-control" %>
+</div>
+
+<div class="form-group">
+        <%= submit_tag "Guardar",  class: "btn btn-success" %>
+    <button class="btn btn-danger">Cancelar</button>
+</div>
+
+<%end%>
